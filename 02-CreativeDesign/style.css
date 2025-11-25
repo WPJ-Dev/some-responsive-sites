@@ -147,7 +147,7 @@ body {
 
 .customer {
     width: 35rem;
-    height: 35rem;
+    height: 50rem;
     background-color: #eee;
     display: flex;
     flex-direction: column;
@@ -155,6 +155,11 @@ body {
     border-radius: 0.5rem;
     padding: 2rem;
     box-shadow: 1rem 1rem 2rem #ddd, -1rem -1rem 2rem #eee;
+    transition: box-shadow 0.5s;
+}
+
+.customer:hover {
+    box-shadow: 2rem 2rem 3rem #ddd, -1rem -1rem 3rem #eee;
 }
 
 .customer:first-child {
