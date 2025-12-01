@@ -126,6 +126,7 @@ html {
     visibility: hidden;
     animation: fadeAnimation 1s 2s forwards;
     position: relative;
+    overflow: hidden;
 }
 
 .banner-btn::before {
@@ -134,8 +135,14 @@ html {
     height: 100%;
     background: linear-gradient(to right, transparent, #fff, transparent);
     position: absolute;
-    /* top: 0; */
-    /* left: -100%; */
+    top: 0;
+    left: -100%;
+    transform: skewX(-30deg);
+    transition: left 0.5s;
+}
+
+.banner-btn:hover::before {
+    left: 100%;
 }
 
 @keyframes fadeAnimation {
