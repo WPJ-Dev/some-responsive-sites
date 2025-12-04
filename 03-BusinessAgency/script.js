@@ -8,3 +8,33 @@ menu.addEventListener('click', () => {
 });
 
 // End of Navbar
+
+// Section 2 video
+const video = document.querySelector('.video');
+const btn = document.querySelector('.buttons i');
+const bar = document.querySelector('.video-bar');
+
+const playPause = () => {
+    if(video.paused) {
+        video.play();
+        btn.className = 'far fa-pause-circle';
+        video.style.opacity = '0.7';
+    } else {
+        video.pause();
+        btn.className = 'far fa-play-circle';
+        video.style.opacity = '0.3';
+    }
+};
+
+btn.addEventListener('click', playPause);
+
+video.addEventListener('timeupdate', () => {
+    console.log(video.currentTime, video.duration);
+    const barWidth = (video.currentTime / video.duration) * 100;
+    bar.style.width = `${barWidth}%`;
+    if(video.ended) {
+        btn.className = 'far fa-play-circle';
+        video.style.opacity = '0.3';
+    }
+});
+// End of Section 2 video
