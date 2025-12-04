@@ -29,7 +29,6 @@ const playPause = () => {
 btn.addEventListener('click', playPause);
 
 video.addEventListener('timeupdate', () => {
-    console.log(video.currentTime, video.duration);
     const barWidth = (video.currentTime / video.duration) * 100;
     bar.style.width = `${barWidth}%`;
     if(video.ended) {
